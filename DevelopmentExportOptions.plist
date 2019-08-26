@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>signingStyle</key>
+	<string>manual</string>
+	<key>provisioningProfiles</key>
+	<dict>
+		<key>需要替换的BundleID</key>
+		<string>需要替换的.mobileprovision文件的UUID</string>
+	</dict>
+	<key>uploadSymbols</key>
+	<string>YES</string>
+	<key>compileBitcode</key>
+	<string>NO</string>
+	<key>method</key>
+	<string>development</string>
+	<key>TeamID</key>
+	<string>需要替换的TeamID</string>
+	<key>signingCertificate</key>
+	<string>iPhone Developer</string>
+</dict>
+</plist>
