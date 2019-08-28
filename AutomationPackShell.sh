@@ -26,7 +26,8 @@ echo "`ls $1`"
 projectName="AutomationPackDemo"
 configuration_mode="Debug"
 # configuration_mode="Release"
-projectXcodeproj="AutomationPackDemo.xcodeproj"
+# projectXcodeproj="AutomationPackDemo.xcodeproj"
+projectXcodeproj="AutomationPackDemo.xcworkspace"
 # currentDate=$(date "+%Y-%m-%d %H-%M-%S")
 ipaName="${projectName}.ipa"
 
@@ -35,12 +36,17 @@ archPath="/Users/hewenjie/Desktop/dabao/${projectName}.xcarchive"
 ipaPath="/Users/hewenjie/Desktop/ceshi/"
 plistPath="$(pwd)/DevelopmentExportOptions.plist"
 
+# 区分工程是project还是xcworkspace
+
 # 1.clean
-xcodebuild -project ${projectXcodeproj} -scheme ${projectName} -configuration ${configuration_mode} clean
+# xcodebuild -project ${projectXcodeproj} -scheme ${projectName} -configuration ${configuration_mode} clean
+xcodebuild -workspace ${projectXcodeproj} -scheme ${projectName} -configuration ${configuration_mode} clean
 # 2.build
 # xcodebuild -project ${projectName}/${projectXcodeproj} -scheme ${projectName} -configuration ${configuration_mode}  build
 # 3.archive
-xcodebuild -project "${projectXcodeproj}" -scheme "${projectName}" -configuration "${configuration_mode}" \
+# xcodebuild -project "${projectXcodeproj}" -scheme "${projectName}" -configuration "${configuration_mode}" \
+# -archivePath "${archPath}" archive
+xcodebuild -workspace "${projectXcodeproj}" -scheme "${projectName}" -configuration "${configuration_mode}" \
 -archivePath "${archPath}" archive
  # 4.打包ipa
 if [[ -e $archPath ]]; then
